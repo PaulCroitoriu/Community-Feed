@@ -1,5 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
+import Helmet from "react-helmet";
 
 const HeaderWrapper = styled.div`
   background-color: orange;
@@ -17,9 +18,18 @@ const Title = styled.h1`
 `;
 
 const Header = () => (
-  <HeaderWrapper>
-    <Title>Q&A Feed</Title>
-  </HeaderWrapper>
+  <>
+    <Helmet>
+      <title>Q&A Feed</title>
+      <meta
+        name="description"
+        content="this is a community feed project build with React"
+      />
+    </Helmet>
+    <HeaderWrapper>
+      <Title>Q&A Feed</Title>
+    </HeaderWrapper>
+  </>
 );
 
 export default Header;
